@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.forms import CharField
 
 
 # Create your models here.
@@ -48,4 +49,5 @@ class User(AbstractUser):
         (SITE_AP9, "Madurai-TVS"),
     )
 
+    name = models.CharField(max_length=50, null = True)
     site = models.CharField(choices=SITE_MAPPING, max_length=30, default=False)
