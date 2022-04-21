@@ -8,7 +8,6 @@ class EvaluationsAdmin(admin.ModelAdmin):
     """Custom Evaluation Admin"""
     list_display = (
         "Enquiry_Date",
-        "Location",
         "Evaluator",
         "Enquiry_Source",
         "Place",

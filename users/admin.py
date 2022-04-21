@@ -6,10 +6,6 @@ from . import models
 @admin.register(models.User)
 class CustomUserAdmin(UserAdmin):
     fieldsets = UserAdmin.fieldsets + (
-        ("Banana", {"fields": ("NAME","gender",)}),
+        ("Banana", {"fields": ("NAME","gender","site")}),
     )
 
-
-@admin.register(models.Site)
-class SiteAdmin(admin.ModelAdmin):
-    pass

@@ -8,7 +8,7 @@ from users import models as user_models
 class Evaluations(core_models.TimeStampedModel):
     Enquiry_Date = models.DateTimeField(auto_now_add=True)
 
-    Location = models.ForeignKey("users.Site", on_delete=models.CASCADE, null=True)
+    #Location = models.ForeignKey("users.Site", on_delete=models.CASCADE, null=True)
 
 
     Evaluator = models.ForeignKey("users.User", on_delete=models.CASCADE, null=True)
