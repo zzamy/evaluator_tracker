@@ -8,7 +8,7 @@ def all_evaluations(request):
     all_evaluations = models.Evaluations.objects.all()
     return render(
         request,
-        "all_evaluations.html",
+        "evaluations/home.html",
         context={
             "evaluations": all_evaluations,
         },
