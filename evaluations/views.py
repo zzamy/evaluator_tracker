@@ -1,9 +1,15 @@
-from datetime import date, datetime
 from django.shortcuts import render
-from django.http import HttpResponse
+from . import models
 
 # Create your views here.
 
 
 def all_evaluations(request):
-    return render(request, "all_evaluations")
+    all_evaluations = models.Evaluations.objects.all()
+    return render(
+        request,
+        "all_evaluations.html",
+        context={
+            "evaluations": all_evaluations,
+        },
+    )

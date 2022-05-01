@@ -5,14 +5,13 @@ from users import models as user_models
 
 # Create your models here.
 
+
 class Evaluations(core_models.TimeStampedModel):
     Enquiry_Date = models.DateTimeField(auto_now_add=True)
 
-    #Location = models.ForeignKey("users.Site", on_delete=models.CASCADE, null=True)
-
+    # Location = models.ForeignKey("users.Site", on_delete=models.CASCADE, null=True)
 
     Evaluator = models.ForeignKey("users.User", on_delete=models.CASCADE, null=True)
-
 
     Source1 = "Out-bound"
     Source2 = "Exchange(Trade-in)"
@@ -63,14 +62,9 @@ class Evaluations(core_models.TimeStampedModel):
     Quoted_Price = models.IntegerField()
     Expected_Price = models.IntegerField()
 
-    #Different = 
+    # Different =
     Final_Price = models.IntegerField(null=True)
     Brand = models.CharField(max_length=30)
     Varient = models.CharField(max_length=30)
     Y_O_M = models.DateField()
     KMs = models.IntegerField()
-
-    
-
-
-

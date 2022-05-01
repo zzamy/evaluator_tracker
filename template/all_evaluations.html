@@ -1,0 +1,37 @@
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Evaluator</th>
+    <th>Source</th>
+    <th>Place</th>
+    <th>REG_No</th>
+    <th>Status</th>
+    <th>RF</th>
+    <th>Quoted_Price</th>
+    <th>Expected_Price</th>
+    <th>Final_Price</th>
+    <th>Brand</th>
+    <th>Varient</th>
+    <th>Y_O_M</th>
+    <th>KMs</th>
+  </tr>
+
+  {% for evaluation in evaluations %}
+  <tr>
+    <th>{{evaluation.Enquiry_Date}}</th>
+    <th>{{evaluation.Evaluator}}</th>
+    <th>{{evaluation.Enquiry_Source}}</th>
+    <th>{{evaluation.Place}}</th>
+    <th>{{evaluation.REG_No}}</th>
+    <th>{{evaluation.Status}}</th>
+    <th>{{evaluation.RF}}</th>
+    <th>{{evaluation.Quoted_Price}}</th>
+    <th>{{evaluation.Expected_Price}}</th>
+    <th>{{evaluation.Final_Price}}</th>
+    <th>{{evaluation.Brand}}</th>
+    <th>{{evaluation.Varient}}</th>
+    <th>{{evaluation.Y_O_M}}</th>
+    <th>{{evaluation.KMs}}</th>
+  </tr>
+  {% endfor %}
+</table>
