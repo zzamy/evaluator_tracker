@@ -1,63 +1,53 @@
 {% extends 'base.html' %} {% block page_name %} HOME {% endblock page_name %}
-
 {%block content %}
-  <table>
-    <tr>
-      <th>Date</th>
-      <th>Evaluator</th>
-      <th>Source</th>
-      <th>Place</th>
-      <th>REG_No</th>
-      <th>Status</th>
-      <th>RF</th>
-      <th>Quoted_Price</th>
-      <th>Expected_Price</th>
-      <th>Final_Price</th>
-      <th>Brand</th>
-      <th>Varient</th>
-      <th>Y_O_M</th>
-      <th>KMs</th>
-    </tr>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Evaluator</th>
+    <th>Source</th>
+    <th>Place</th>
+    <th>REG_No</th>
+    <th>Status</th>
+    <th>RF</th>
+    <th>Quoted_Price</th>
+    <th>Expected_Price</th>
+    <th>Final_Price</th>
+    <th>Brand</th>
+    <th>Varient</th>
+    <th>Y_O_M</th>
+    <th>KMs</th>
+  </tr>
 
-    {% for evaluation in evaluations %}
-    <tr>
-      <th>{{evaluation.Enquiry_Date}}</th>
-      <th>{{evaluation.Evaluator}}</th>
-      <th>{{evaluation.Enquiry_Source}}</th>
-      <th>{{evaluation.Place}}</th>
-      <th>{{evaluation.REG_No}}</th>
-      <th>{{evaluation.Status}}</th>
-      <th>{{evaluation.RF}}</th>
-      <th>{{evaluation.Quoted_Price}}</th>
-      <th>{{evaluation.Expected_Price}}</th>
-      <th>{{evaluation.Final_Price}}</th>
-      <th>{{evaluation.Brand}}</th>
-      <th>{{evaluation.Varient}}</th>
-      <th>{{evaluation.Y_O_M}}</th>
-      <th>{{evaluation.KMs}}</th>
-    </tr>
-    {% endfor %}
-  </table>
-  <h5>
-    {% if evaluations.has_previous %}
-      <a href="?page={{evaluations.number|add:-1}}">Previous</a>
-    {% endif %}
-
-    Page {{evaluations.number}} of {{evaluations.paginator.num_pages}}
-  
-    {% for page in evaluations.paginator.page_range %}
-      {{page}}
-    {% endfor %}
-
-    {% if evaluations.has_next %}
-    <a href="?page={{evaluations.number|add:-1}}">Next</a>
-    {% endif %}
-  
-  </h5>
-
-  
-  {% for page in page_range %} 
-    <a href = "?page = {{page}} ">{{page}}</a>
+  {% for evaluation in evaluations %}
+  <tr>
+    <th>{{evaluation.Enquiry_Date}}</th>
+    <th>{{evaluation.Evaluator}}</th>
+    <th>{{evaluation.Enquiry_Source}}</th>
+    <th>{{evaluation.Place}}</th>
+    <th>{{evaluation.REG_No}}</th>
+    <th>{{evaluation.Status}}</th>
+    <th>{{evaluation.RF}}</th>
+    <th>{{evaluation.Quoted_Price}}</th>
+    <th>{{evaluation.Expected_Price}}</th>
+    <th>{{evaluation.Final_Price}}</th>
+    <th>{{evaluation.Brand}}</th>
+    <th>{{evaluation.Varient}}</th>
+    <th>{{evaluation.Y_O_M}}</th>
+    <th>{{evaluation.KMs}}</th>
+  </tr>
   {% endfor %}
+</table>
 
-{% endblock content %}
+<h5>
+  {% if evaluations.has_previous %}
+  <a href="?page={{evaluations.number|add:-1}}">Previous</a>
+  {% endif %} Page {{evaluations.number}} of {{evaluations.paginator.num_pages}}
+  {% for page in evaluations.paginator.page_range %} {{page}} {% endfor %}
+  {% if evaluations.has_next %}
+  <a href="?page={{evaluations.number|add:-1}}">Next</a>
+  {% endif %}
+</h5>
+
+{% for page in page_range %}
+<a href="?page = {{page}} ">{{page}}</a>
+{% endfor %} {% endblock content %}
